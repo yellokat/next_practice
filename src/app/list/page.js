@@ -1,4 +1,5 @@
 import connectDB from "../util/database";
+import DetailLink from "./detailLink";
 export default async function List() {
 
     let client = await connectDB;
@@ -11,6 +12,8 @@ export default async function List() {
                 <div className="list-item">
                     <h4>{e.title}</h4>
                     <p>{e.content}</p>
+                    <a href={"/detail/"+e._id.toString()}>자세히 보기</a>
+                    <DetailLink>자세히 보기</DetailLink>
                 </div>    
             )}
         </div>
